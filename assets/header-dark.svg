@@ -1,136 +1,138 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 320" width="100%" height="100%">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 290" width="100%" height="100%">
   <defs>
-    <!-- Background Gradient: Deep Space Cadet -->
-    <linearGradient id="bgGradDark" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#1b1c2a" />
-      <stop offset="45%" stop-color="#2B2D42" />
+    <!-- Background Gradient: Space Cadet Depth -->
+    <linearGradient id="termBgDark" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#191a26" />
+      <stop offset="40%" stop-color="#2B2D42" />
       <stop offset="100%" stop-color="#161722" />
     </linearGradient>
 
     <!-- Border Gradient -->
-    <linearGradient id="borderGradDark" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#9A8C98" stop-opacity="0.6" />
-      <stop offset="50%" stop-color="#4A4E69" stop-opacity="0.3" />
-      <stop offset="100%" stop-color="#9A8C98" stop-opacity="0.5" />
+    <linearGradient id="termBorderDark" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#9A8C98" stop-opacity="0.45" />
+      <stop offset="50%" stop-color="#4A4E69" stop-opacity="0.25" />
+      <stop offset="100%" stop-color="#9A8C98" stop-opacity="0.4" />
     </linearGradient>
 
-    <!-- Text Highlight Gradient -->
-    <linearGradient id="textGradDark" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#FFFFFF" />
-      <stop offset="40%" stop-color="#F2E9E4" />
-      <stop offset="100%" stop-color="#C9ADA7" />
-    </linearGradient>
-
-    <!-- Accent Gradient -->
-    <linearGradient id="accentGradDark" x1="0%" y1="0%" x2="100%" y2="0%">
+    <linearGradient id="accentLineDark" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%" stop-color="#4A4E69" />
       <stop offset="50%" stop-color="#9A8C98" />
       <stop offset="100%" stop-color="#C9ADA7" />
     </linearGradient>
 
-    <!-- Glow Filter -->
-    <filter id="glowDark" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur stdDeviation="35" result="blur" />
+    <!-- Subtle Ambient Glow -->
+    <filter id="softGlowDark" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="30" result="blur" />
       <feComposite in="SourceGraphic" in2="blur" operator="over" />
     </filter>
-
-    <!-- Pattern -->
-    <pattern id="gridDark" width="30" height="30" patternUnits="userSpaceOnUse">
-      <path d="M 30 0 L 0 0 0 30" fill="none" stroke="#4A4E69" stroke-width="0.75" stroke-opacity="0.18" />
-      <circle cx="0" cy="0" r="1" fill="#9A8C98" fill-opacity="0.25" />
-    </pattern>
   </defs>
 
   <style>
-    @keyframes pulseDot {
-      0%, 100% { opacity: 1; transform: scale(1); }
-      50% { opacity: 0.4; transform: scale(0.85); }
+    @keyframes blink {
+      0%, 49% { opacity: 1; }
+      50%, 100% { opacity: 0; }
     }
-    @keyframes floatOrb {
-      0%, 100% { transform: translateY(0px); }
-      50% { transform: translateY(-10px); }
+    @keyframes pulseLive {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(0.85); opacity: 0.5; }
     }
-    .pulsing { animation: pulseDot 2.5s infinite ease-in-out; transform-origin: 755px 55px; }
-    .floating { animation: floatOrb 6s infinite ease-in-out; }
-    .font-title { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; font-weight: 800; }
-    .font-sub { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; font-weight: 500; }
-    .font-mono { font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace; }
+    .cursor { animation: blink 1s infinite; }
+    .live-dot { animation: pulseLive 2s infinite ease-in-out; transform-origin: 735px 23px; }
+    .mono { font-family: 'JetBrains Mono', 'Fira Code', 'SFMono-Regular', Consolas, Menlo, monospace; }
+    .sans { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; }
   </style>
 
-  <!-- Background Rect -->
-  <rect width="900" height="320" rx="16" fill="url(#bgGradDark)" />
+  <!-- Ambient background glow behind window -->
+  <circle cx="800" cy="50" r="130" fill="#4A4E69" fill-opacity="0.22" filter="url(#softGlowDark)" />
+  <circle cx="80" cy="240" r="100" fill="#2B2D42" fill-opacity="0.5" filter="url(#softGlowDark)" />
 
-  <!-- Ambient Glow Circles -->
-  <g class="floating">
-    <circle cx="820" cy="70" r="140" fill="#4A4E69" fill-opacity="0.28" filter="url(#glowDark)" />
-    <circle cx="120" cy="270" r="120" fill="#2B2D42" fill-opacity="0.4" filter="url(#glowDark)" />
-    <circle cx="480" cy="160" r="90" fill="#9A8C98" fill-opacity="0.12" filter="url(#glowDark)" />
+  <!-- Main Window Frame -->
+  <rect x="2" y="2" width="876" height="286" rx="14" fill="url(#termBgDark)" stroke="url(#termBorderDark)" stroke-width="1.5" />
+
+  <!-- Titlebar -->
+  <path d="M 2 16 C 2 8.27 8.27 2 16 2 L 864 2 C 871.73 2 878 8.27 878 16 L 878 44 L 2 44 Z" fill="#1b1c2b" fill-opacity="0.9" />
+  <line x1="2" y1="44" x2="878" y2="44" stroke="#4A4E69" stroke-width="1" stroke-opacity="0.35" />
+
+  <!-- Window controls -->
+  <circle cx="25" cy="23" r="6" fill="#FF5F56" fill-opacity="0.85" />
+  <circle cx="45" cy="23" r="6" fill="#FFBD2E" fill-opacity="0.85" />
+  <circle cx="65" cy="23" r="6" fill="#27C93F" fill-opacity="0.85" />
+
+  <!-- Tab pill -->
+  <g transform="translate(100, 10)">
+    <rect width="180" height="26" rx="6" fill="#2B2D42" fill-opacity="0.7" stroke="#4A4E69" stroke-width="1" stroke-opacity="0.4" />
+    <text x="22" y="17" fill="#F2E9E4" class="mono" font-size="12">x1ax@dev:~</text>
   </g>
 
-  <!-- Grid overlay -->
-  <rect width="900" height="320" rx="16" fill="url(#gridDark)" />
-
-  <!-- Inner border -->
-  <rect x="1.5" y="1.5" width="897" height="317" rx="15" fill="none" stroke="url(#borderGradDark)" stroke-width="1.5" />
-
-  <!-- Top Accent Bar -->
-  <path d="M 0 16 C 0 7.16 7.16 0 16 0 L 884 0 C 892.84 0 900 7.16 900 16 L 900 4 L 0 4 Z" fill="url(#accentGradDark)" />
-
-  <!-- Status Badge (Top Right) -->
-  <g transform="translate(670, 36)">
-    <rect width="180" height="34" rx="17" fill="#1b1c2a" fill-opacity="0.85" stroke="#4A4E69" stroke-width="1.2" />
-    <circle cx="22" cy="17" r="4.5" fill="#52B788" class="pulsing" />
-    <text x="36" y="22" fill="#E0E1DD" class="font-sub" font-size="12.5" letter-spacing="0.5">OPEN TO CONNECT</text>
+  <!-- Live Status Badge (Titlebar Right) -->
+  <g transform="translate(680, 10)">
+    <rect width="175" height="26" rx="13" fill="#161722" stroke="#4A4E69" stroke-width="1" />
+    <circle cx="16" cy="13" r="4" fill="#52B788" class="live-dot" />
+    <text x="28" y="17" fill="#C9ADA7" class="sans" font-size="11.5" font-weight="600">discord: xvanaks</text>
   </g>
 
-  <!-- Greeting Tag -->
-  <g transform="translate(60, 48)">
-    <rect width="125" height="28" rx="14" fill="#4A4E69" fill-opacity="0.4" stroke="#9A8C98" stroke-width="1" stroke-opacity="0.5" />
-    <text x="14" y="18" fill="#F2E9E4" class="font-mono" font-size="12" letter-spacing="1">WELCOME_TO</text>
-  </g>
+  <!-- Terminal Content -->
+  <g transform="translate(32, 75)" class="mono" font-size="14.5" letter-spacing="0.3">
+    <!-- Line 1: whoami -->
+    <text y="0">
+      <tspan fill="#9A8C98">~</tspan>
+      <tspan fill="#4A4E69"> $ </tspan>
+      <tspan fill="#F2E9E4" font-weight="600">whoami</tspan>
+    </text>
+    <text y="24">
+      <tspan fill="#9A8C98">↳</tspan>
+      <tspan fill="#FFFFFF" font-weight="700"> x1ax </tspan>
+      <tspan fill="#9A8C98">(sahanikityuk-cmyk)</tspan>
+      <tspan fill="#4A4E69"> — </tspan>
+      <tspan fill="#C9ADA7">разработчик / делаю веб-штуки</tspan>
+    </text>
 
-  <!-- Main Title / Nickname -->
-  <g transform="translate(60, 126)">
-    <text class="font-title" font-size="48" fill="url(#textGradDark)" letter-spacing="-1">
-      x1ax <tspan font-size="28" fill="#9A8C98" font-weight="400">/ sahanikityuk-cmyk</tspan>
+    <!-- Line 2: profile info -->
+    <text y="58">
+      <tspan fill="#9A8C98">~</tspan>
+      <tspan fill="#4A4E69"> $ </tspan>
+      <tspan fill="#F2E9E4" font-weight="600">cat</tspan>
+      <tspan fill="#C9ADA7"> stack.config</tspan>
+    </text>
+
+    <text y="82" fill="#C9ADA7">
+      <tspan fill="#4A4E69">{</tspan>
+      <tspan fill="#9A8C98"> "code":</tspan> <tspan fill="#F2E9E4">["JavaScript", "TypeScript", "React", "Python"]</tspan><tspan fill="#4A4E69">,</tspan>
+    </text>
+    <text y="104" fill="#C9ADA7">
+      <tspan fill="#9A8C98">  "style":</tspan> <tspan fill="#F2E9E4">"аккуратный UI, тёмные темы, без оверинжиниринга"</tspan><tspan fill="#4A4E69">,</tspan>
+    </text>
+    <text y="126" fill="#C9ADA7">
+      <tspan fill="#9A8C98">  "reach":</tspan> <tspan fill="#9A8C98">"Discord → </tspan><tspan fill="#FFFFFF" font-weight="700">xvanaks</tspan><tspan fill="#9A8C98">"</tspan>
+      <tspan fill="#4A4E69"> }</tspan>
+    </text>
+
+    <!-- Line 3: interactive prompt with cursor -->
+    <text y="160">
+      <tspan fill="#9A8C98">~</tspan>
+      <tspan fill="#4A4E69"> $ </tspan>
+      <tspan fill="#F2E9E4">git commit -m </tspan>
+      <tspan fill="#C9ADA7">"пока работает — не трогай"</tspan>
+      <tspan class="cursor" fill="#9A8C98">█</tspan>
     </text>
   </g>
 
-  <!-- Subtitle / Bio -->
-  <g transform="translate(60, 168)">
-    <text class="font-sub" font-size="17" fill="#C9ADA7" letter-spacing="0.2">
-      Passionate Developer • Turning ideas into high-performance digital experiences
-    </text>
-    <text class="font-sub" font-size="14.5" fill="#9A8C98" y="26">
-      Focused on clean code, responsive interfaces &amp; scalable web solutions
-    </text>
+  <!-- Bottom Status Bar -->
+  <rect x="2" y="258" width="876" height="30" rx="0" fill="#161722" fill-opacity="0.95" />
+  <line x1="2" y1="258" x2="878" y2="258" stroke="#4A4E69" stroke-width="1" stroke-opacity="0.3" />
+
+  <!-- Status Bar items -->
+  <g transform="translate(25, 278)" class="mono" font-size="11.5">
+    <text fill="#52B788">● git:(main)</text>
+    <text x="110" fill="#9A8C98">UTF-8</text>
+    <text x="175" fill="#C9ADA7">TypeScript</text>
   </g>
 
-  <!-- Decorative Separator Line -->
-  <line x1="60" y1="228" x2="840" y2="228" stroke="#4A4E69" stroke-width="1" stroke-opacity="0.4" />
-
-  <!-- Bottom Interactive / Connect Badges -->
-  <!-- Discord Badge -->
-  <g transform="translate(60, 248)">
-    <rect width="210" height="42" rx="10" fill="#2B2D42" stroke="#9A8C98" stroke-width="1.2" fill-opacity="0.9" />
-    <!-- Discord Icon -->
-    <path fill="#9A8C98" d="M34.5 15.2c-1.6-.8-3.3-1.4-5.1-1.8-.2.4-.4.9-.6 1.4-1.9-.3-3.8-.3-5.7 0-.2-.5-.4-1-.6-1.4-1.8.4-3.5 1-5.1 1.8-3.2 4.9-4.1 9.7-3.7 14.5 2.1 1.6 4.2 2.6 6.3 3.2.5-.7 1-1.4 1.4-2.2-1-.4-2-.9-2.9-1.5.2-.2.5-.4.7-.6 4.1 1.9 8.5 1.9 12.6 0 .2.2.5.4.7.6-.9.6-1.9 1.1-2.9 1.5.4.8.9 1.5 1.4 2.2 2.1-.6 4.2-1.6 6.3-3.2.5-5.3-.8-10.1-3.7-14.5zm-14.4 11.8c-1.2 0-2.2-1.1-2.2-2.5s1-2.5 2.2-2.5 2.2 1.1 2.2 2.5-1 2.5-2.2 2.5zm9.8 0c-1.2 0-2.2-1.1-2.2-2.5s1-2.5 2.2-2.5 2.2 1.1 2.2 2.5-1 2.5-2.2 2.5z"/>
-    <text x="46" y="26" fill="#F2E9E4" class="font-mono" font-size="13.5" font-weight="600">Discord: xvanaks</text>
-  </g>
-
-  <!-- GitHub Tag Badge -->
-  <g transform="translate(285, 248)">
-    <rect width="190" height="42" rx="10" fill="#1b1c2a" stroke="#4A4E69" stroke-width="1.2" fill-opacity="0.75" />
-    <!-- Octocat SVG icon outline -->
-    <path fill="#9A8C98" d="M30 14c-5.5 0-10 4.5-10 10 0 4.4 2.9 8.2 6.8 9.5.5.1.7-.2.7-.5v-1.8c-2.8.6-3.4-1.4-3.4-1.4-.5-1.1-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.6 1.1 1.6 1.1.9 1.6 2.4 1.1 3 .9.1-.7.4-1.1.7-1.4-2.2-.3-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .9-.3 2.8 1 .8-.2 1.7-.4 2.6-.4s1.8.1 2.6.4c2-1.3 2.8-1 2.8-1 .5 1.4.2 2.5.1 2.7.6.7 1 1.6 1 2.7 0 3.9-2.4 4.7-4.6 5 .4.3.7 1 .7 2v2.9c0 .3.2.6.7.5 4-1.3 6.8-5.1 6.8-9.5 0-5.5-4.5-10-10-10z"/>
-    <text x="44" y="26" fill="#C9ADA7" class="font-mono" font-size="13">@sahanikityuk-cmyk</text>
-  </g>
-
-  <!-- Subtle Palette Pill Indicators -->
-  <g transform="translate(735, 258)">
-    <circle cx="15" cy="11" r="8" fill="#2B2D42" stroke="#4A4E69" stroke-width="1" />
-    <circle cx="37" cy="11" r="8" fill="#4A4E69" stroke="#9A8C98" stroke-width="1" />
-    <circle cx="59" cy="11" r="8" fill="#9A8C98" stroke="#F2E9E4" stroke-width="1" />
-    <circle cx="81" cy="11" r="8" fill="#C9ADA7" stroke="#F2E9E4" stroke-width="1" />
+  <!-- Palette dots in footer -->
+  <g transform="translate(770, 273)">
+    <circle cx="10" cy="0" r="5" fill="#2B2D42" stroke="#4A4E69" stroke-width="1" />
+    <circle cx="28" cy="0" r="5" fill="#4A4E69" stroke="#9A8C98" stroke-width="1" />
+    <circle cx="46" cy="0" r="5" fill="#9A8C98" stroke="#C9ADA7" stroke-width="1" />
+    <circle cx="64" cy="0" r="5" fill="#C9ADA7" stroke="#F2E9E4" stroke-width="1" />
   </g>
 </svg>
