@@ -20,9 +20,9 @@
 
 <div align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="assets/snake-dark.svg">
-    <source media="(prefers-color-scheme: light)" srcset="assets/snake-light.svg">
-    <img alt="Snake Activity Graph" src="assets/snake-dark.svg" width="100%">
+    <source media="(prefers-color-scheme: dark)" srcset="assets/github-snake-dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="assets/github-snake-light.svg">
+    <img alt="Snake Activity Graph" src="assets/github-snake-dark.svg" width="100%">
   </picture>
 </div>
 
