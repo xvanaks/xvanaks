@@ -6,7 +6,7 @@
   </picture>
 </div>
 
-### йо 👋
+### вась 👋
 
 Я **x1ax** (`@xvanaks`) — фуллстек разработчик. Пишу код, создаю веб-приложения и пет-проекты, уделяя внимание чистоте архитектуры и удобству интерфейса.
 
@@ -39,5 +39,5 @@
 ---
 
 <div align="center">
-  <sub>Discord: <code>xvanaks</code> • Palette: <code>#2B2D42</code> <code>#4A4E69</code> <code>#9A8C98</code></sub>
+  <sub>Discord: <code>xvanaks</code></sub>
 </div>
