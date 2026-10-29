@@ -16,13 +16,13 @@
 
 ---
 
-### 📊 System & Vibe Monitor
+### 🐍 Активность
 
 <div align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="assets/widget-dark.svg">
-    <source media="(prefers-color-scheme: light)" srcset="assets/widget-light.svg">
-    <img alt="Stats Widget" src="assets/widget-dark.svg" width="100%">
+    <source media="(prefers-color-scheme: dark)" srcset="assets/snake-dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="assets/snake-light.svg">
+    <img alt="Snake Activity Graph" src="assets/snake-dark.svg" width="100%">
   </picture>
 </div>
 
