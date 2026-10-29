@@ -8,11 +8,11 @@
 
 ### йо 👋
 
-Я **x1ax** (`sahanikityuk-cmyk`). Пишу код, пилю сайты и пет-проекты, ковыряюсь во фронтенде и стараюсь делать вещи, которые выглядят аккуратно и не бесят при использовании.
+Я **x1ax** (`@xvanaks`) — фуллстек разработчик. Пишу код, создаю веб-приложения и пет-проекты, уделяя внимание чистоте архитектуры и удобству интерфейса.
 
-- 🛠 **С чем в основном вожусь:** TypeScript, JavaScript, React, вёрстка (HTML/CSS), а для скриптов и парсинга беру Python.
-- 🎯 **Подход:** меньше оверинжиниринга, больше читаемого кода и приятного визуала.
-- 👾 **Связь:** мой Discord — **`xvanaks`**. Пиши, если есть мысли что-то запилить вместе или просто пообщаться.
+- 🛠 **Стек:** TypeScript, JavaScript, React, Node.js, HTML/CSS, Python
+- 🎯 **Принцип:** меньше оверинжиниринга, больше понятного кода и аккуратного визуала
+- 💬 **Связь:** Discord — **`xvanaks`**
 
 ---
 
@@ -28,16 +28,16 @@
 
 ---
 
-### 🛠 Стек
+### 🛠 Стек и инструменты
 
 <div align="center">
   <a href="https://skillicons.dev">
-    <img src="https://skillicons.dev/icons?i=js,ts,html,css,react,tailwind,python,git,vscode" alt="Skills" />
+    <img src="https://skillicons.dev/icons?i=js,ts,html,css,react,tailwind,nodejs,python,git,vscode" alt="Skills" />
   </a>
 </div>
 
 ---
 
 <div align="center">
-  <sub>дискорд для связи: <code>xvanaks</code> • палитра: <code>#2B2D42</code> <code>#4A4E69</code> <code>#9A8C98</code></sub>
+  <sub>Discord: <code>xvanaks</code> • Palette: <code>#2B2D42</code> <code>#4A4E69</code> <code>#9A8C98</code></sub>
 </div>
