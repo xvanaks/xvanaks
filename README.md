@@ -8,9 +8,9 @@
 
 ### вась 👋
 
-Я **x1ax** (`@xvanaks`) — фуллстек разработчик. Пишу код, создаю веб-приложения и пет-проекты, уделяя внимание чистоте архитектуры и удобству интерфейса.
+Я **x1ax** (`@xvanaks`) — фуллстек разработчик(В будущем). Пишу код, создаю веб-приложения и пет-проекты, уделяя внимание чистоте архитектуры и удобству интерфейса.
 
-- 🛠 **Стек:** TypeScript, JavaScript, React, Node.js, HTML/CSS, Python
+- 🛠 **Что уже знаю: JavaScript, TypeScipt, HTML, CSS, Python**
 - 🎯 **Принцип:** меньше оверинжиниринга, больше понятного кода и аккуратного визуала
 - 💬 **Связь:** Discord — **`xvanaks`**
 
@@ -32,7 +32,7 @@
 
 <div align="center">
   <a href="https://skillicons.dev">
-    <img src="https://skillicons.dev/icons?i=js,ts,html,css,react,tailwind,nodejs,python,git,vscode" alt="Skills" />
+    <img src="https://skillicons.dev/icons?i=js,ts,html,css,python,git,vscode" alt="Skills" />
   </a>
 </div>
 
